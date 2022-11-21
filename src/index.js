@@ -12,7 +12,7 @@ let PORT = process.env.PORT || 8000
 cloudinary.config({ 
     cloud_name: process.env.CLOUD_NAME, 
     api_key: process.env.API_KEY, 
-    api_secret: process.env.API_SECRECT,
+    api_secret: process.env.API_SECRET,
     secure: true
   });
 
@@ -20,7 +20,7 @@ app.use(fileUpload({useTempFiles: true}))
 app.use(cors())
 app.use(bodyParser.json())
 
-const DB = "mongodb+srv://loknath:loknath@cluster0.elbvdba.mongodb.net/instapost?retryWrites=true&w=majority"
+const DB = process.env.DB
 
 
 
