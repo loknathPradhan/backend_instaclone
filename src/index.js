@@ -20,11 +20,11 @@ app.use(fileUpload({useTempFiles: true}))
 app.use(cors())
 app.use(bodyParser.json())
 
-const DB = process.env.DB
+const DB = "mongodb+srv://loknath:loknath@cluster0.elbvdba.mongodb.net/instapost?retryWrites=true&w=majority"
 
 
 
-mongoose.connect(DB ).then(() => {
+mongoose.connect(DB).then(() => {
     console.log("connection is sucess")
 }).catch((e) => {
     console.log("no connection");
